@@ -1,0 +1,137 @@
+/*
+@font-face permite que você utilize fontes que não estão instaladas no computador do usuário
+
+Tipos de arquivos de fonte compatíveis - "woff", "woff2", "truetype", "opentype", "embedded-opentype" e "svg".
+*/
+
+@charset 'UTF-8';
+
+@font-face{
+    font-family: 'Horizon';
+    src: url('../fonte/Dash-Horizon-Demo.otf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Horizon', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-image: url(../imgs/imagem-fundo.jpg);
+    cursor: url('../cursor/cursor.png'),default;
+    background-size: cover;
+
+    /*Para centralizar a DIV*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clock{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 260px;
+    background: transparent;
+    width: 610px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#clock div{
+    height: 200px;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 16);
+    color: #fff;
+    border-radius: 25px;
+    letter-spacing: 3px;
+}
+
+#clock span{
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+#time{
+    font-size: 5px;
+    line-height: 50px;
+}
+
+
+/*Botão GitHub*/
+
+a{
+    text-decoration: none;
+
+}
+
+#div-fixa{
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    right: 10px;
+    width: 250px;
+    background-color:#000000;
+    border-radius: 55px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+#div-fixa.shrink{
+    width: 47px;
+    transition: 0.5s all;
+    overflow: hidden;
+}
+
+#div-fixa img{
+    width: 47px;
+    height: 47px;
+}
+
+#div-fixa > a >.flex-itens{
+    display: flex;
+    align-items: center;
+}
+
+#div-fixa > a >.flex-itens>span{
+    display: block;
+    font-family: 'Horizon',sans-serif;
+    font-weight: bold;
+    color: #6666CC;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 23px;
+    min-width: 175px;
+    opacity: 0;
+}
+
+#div-fixa > a >.flex-itens>span.aparecer{
+    transition: 0.5s all;
+    opacity: 1;
+}
+
+.flutuar{
+    animation-name: flutuar;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out ;
+}
+
+@keyframes flutuar{
+    form{
+        transform: translate3d(0,0,0);
+        filter:brightness(100%);
+    }
+    to{
+        /*Aumenta a intensidade da iluminaçao do icone*/
+        transform: translate3d(0,-15px,0);
+        filter:brightness(145%);
+    }
+}
