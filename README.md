@@ -1,4 +1,4 @@
-# Projeto-digiWatch
+# Projeto-digitalWatch
  Projeto realizado para treinar os conhecimentos adquiridos no JS.
 
 ### Primeira imagem
